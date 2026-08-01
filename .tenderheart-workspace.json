@@ -1,0 +1,13 @@
+{
+  "contractVersion": "workspace-git-runtime-v2",
+  "projectRoot": "/home/user",
+  "frontendPort": 5173,
+  "backendPort": 4001,
+  "databasePort": 5432,
+  "startupCommand": "bash /home/user/startup.sh",
+  "shutdownCommand": "bash /home/user/shutdown.sh",
+  "readyCommand": "bash /home/user/ready.sh",
+  "migrateCommand": "bash /home/user/migrate.sh",
+  "seedCommand": "bash /home/user/seed.sh",
+  "healthPath": "/api/health"
+}
