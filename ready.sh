@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
+
 WORKSPACE_ROOT="${WORKSPACE_ROOT:-/home/user}"
 source "$WORKSPACE_ROOT/scripts/runtime-common.sh"
 load_env
 
-pg_isready   -h "$POSTGRES_HOST"   -p "$POSTGRES_PORT"   -U "$POSTGRES_USER"   -d "$POSTGRES_DB" >/dev/null
+PGPASSWORD="$POSTGRES_PASSWORD" pg_isready \
+  -h "$POSTGRES_HOST" \
+  -p "$POSTGRES_PORT" \
+  -U "$POSTGRES_USER" \
+  -d "$POSTGRES_DB" >/dev/null
 
 wait_http "http://127.0.0.1:${BACKEND_PORT}/api/health"
 wait_http "http://127.0.0.1:${FRONTEND_PORT}"
