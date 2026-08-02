@@ -230,9 +230,6 @@ run_project_setup() {
 }
 
 main() {
-  [ -d "$WORKSPACE_ROOT/.git" ] ||
-    die "setup.sh requires TenderHeart to clone the workspace repository first"
-
   install_postgresql
   discover_postgres
   ensure_postgres_running
