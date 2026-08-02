@@ -1,0 +1,11 @@
+Patch Applied: workspace-default-startup-hardening-fix.zip
+Timestamp: 20260801-211354
+Wrapper Prefix: none
+
+Deleted Paths:
+
+Copied Files:
+startup.sh
+migrate.sh
+seed.sh
+ready.sh
