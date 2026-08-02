@@ -10,7 +10,7 @@ POSTGRES_PORT="${POSTGRES_PORT:-5432}"
 POSTGRES_DB="${POSTGRES_DB:-tenderheart_workspace}"
 POSTGRES_USER="${POSTGRES_USER:-tenderheart}"
 POSTGRES_PASSWORD="${POSTGRES_PASSWORD:-tenderheart_local}"
-FRONTEND_PORT="${FRONTEND_PORT:-8080}"
+FRONTEND_PORT="${FRONTEND_PORT:-5173}"
 BACKEND_PORT="${BACKEND_PORT:-4000}"
 
 echo "[startup] ensuring PostgreSQL is running"
@@ -64,7 +64,4 @@ echo "[startup] starting frontend on $FRONTEND_PORT"
 start_process frontend "$FRONTEND_PORT" \
   "cd '$WORKSPACE_ROOT/frontend' && FRONTEND_PORT='$FRONTEND_PORT' npm run dev -- --host 0.0.0.0 --port '$FRONTEND_PORT' --strictPort"
 
-# Do not call ready.sh here. Startup launches services; TenderHeart owns
-# readiness polling so a transient curl connection refusal does not turn
-# successful startup into WORKSPACE_BOOTSTRAP_FAILED.
 echo workspace_started
