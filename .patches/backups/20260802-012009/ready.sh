@@ -11,10 +11,5 @@ PGPASSWORD="$POSTGRES_PASSWORD" pg_isready \
   -U "$POSTGRES_USER" \
   -d "$POSTGRES_DB" >/dev/null
 
-curl -fsS --max-time 2 \
-  "http://127.0.0.1:${BACKEND_PORT}/api/health" >/dev/null
-
-curl -fsS --max-time 2 \
-  "http://127.0.0.1:${FRONTEND_PORT}" >/dev/null
-
-echo workspace_ready
+wait_http "http://127.0.0.1:${BACKEND_PORT}/api/health"
+wait_http "http://127.0.0.1:${FRONTEND_PORT}"
