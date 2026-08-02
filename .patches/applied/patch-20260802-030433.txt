@@ -1,0 +1,10 @@
+Patch Applied: workspace-default-scrollbar-theme-injection-patch.zip
+Timestamp: 20260802-030433
+Wrapper Prefix: frontend/
+
+Deleted Paths:
+
+Copied Files:
+README-PATCH.md
+src/main.jsx
+src/tenderheart/installTenderHeartTheme.js
