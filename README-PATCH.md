@@ -1,11 +1,11 @@
-# workspace-default focused sandbox workflow patch
+# workspace-default refresh-safe bootstrap fix
 
-Built against workspace-default main commit:
-381e71a89617a084462d756d40a516fa3a5b7e7e
+Fixes the stale/corrupted sandbox bootstrap seen in the logs.
 
 Changes:
-- setup.sh no longer clones or refreshes the repository.
-- TenderHeart must clone first.
-- setup.sh owns PostgreSQL installation/configuration, .env, dependencies, migrations, seeders, and initial startup.
-- startup.sh only restarts PostgreSQL and application services.
-- ready.sh is the authoritative PostgreSQL/backend/frontend readiness probe.
+- Corrects `timestamptz NOTNULL` to `timestamptz NOT NULL`.
+- Uses backend port 4000 consistently.
+- Makes the Vite proxy derive its target from BACKEND_PORT.
+- Keeps the frontend on 5173.
+
+Apply and push this patch before applying the TenderHeart reconnect patch.

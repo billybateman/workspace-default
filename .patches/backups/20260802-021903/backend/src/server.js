@@ -29,7 +29,7 @@ app.get("/api/items", async (_request, response) => {
   response.json(result.rows);
 });
 
-const port = Number(process.env.BACKEND_PORT || process.env.PORT || 4000);
+const port = Number(process.env.BACKEND_PORT || 4001);
 app.listen(port, "0.0.0.0", () => {
   console.log(`backend listening on ${port}`);
 });

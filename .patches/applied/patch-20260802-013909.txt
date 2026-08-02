@@ -1,0 +1,10 @@
+Patch Applied: workspace-default-ready-ownership-fix.zip
+Timestamp: 20260802-013909
+Wrapper Prefix: none
+
+Deleted Paths:
+
+Copied Files:
+startup.sh
+ready.sh
+README-PATCH.md
