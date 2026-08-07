@@ -4,10 +4,10 @@
   "version": "1.0.0",
   "scripts": {
     "install:all": "npm install && npm --prefix frontend install && npm --prefix backend install",
-    "start": "bash startup.sh",
-    "stop": "bash shutdown.sh",
-    "ready": "bash ready.sh",
-    "migrate": "bash migrate.sh",
-    "seed": "bash seed.sh"
+    "start": "bash scripts/startup.sh",
+    "stop": "bash scripts/shutdown.sh",
+    "ready": "bash scripts/ready.sh",
+    "migrate": "bash scripts/migrate.sh",
+    "seed": "bash scripts/seed.sh"
   }
 }

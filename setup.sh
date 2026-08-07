@@ -220,13 +220,13 @@ install_dependencies() {
 run_project_setup() {
   chmod +x "$WORKSPACE_ROOT"/*.sh 2>/dev/null || true
 
-  [ -f "$WORKSPACE_ROOT/migrate.sh" ] && bash "$WORKSPACE_ROOT/migrate.sh"
-  [ -f "$WORKSPACE_ROOT/seed.sh" ] && bash "$WORKSPACE_ROOT/seed.sh"
+  [ -f "$WORKSPACE_ROOT/scripts/migrate.sh" ] && bash "$WORKSPACE_ROOT/scripts/migrate.sh"
+  [ -f "$WORKSPACE_ROOT/scripts/seed.sh" ] && bash "$WORKSPACE_ROOT/scripts/seed.sh"
 
-  [ -f "$WORKSPACE_ROOT/startup.sh" ] ||
-    die "Missing $WORKSPACE_ROOT/startup.sh"
+  [ -f "$WORKSPACE_ROOT/scripts/startup.sh" ] ||
+    die "Missing $WORKSPACE_ROOT/scripts/startup.sh"
 
-  bash "$WORKSPACE_ROOT/startup.sh"
+  bash "$WORKSPACE_ROOT/scripts/startup.sh"
 }
 
 main() {
