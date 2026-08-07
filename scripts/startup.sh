@@ -56,6 +56,17 @@ PGPASSWORD="$POSTGRES_PASSWORD" pg_isready \
   -U "$POSTGRES_USER" \
   -d "$POSTGRES_DB" >/dev/null
 
+install_deps() {
+  local dir="$1"
+  if [ ! -d "$dir/node_modules" ]; then
+    echo "[startup] installing dependencies in $dir"
+    ( cd "$dir" && npm install )
+  fi
+}
+
+install_deps "$WORKSPACE_ROOT/backend"
+install_deps "$WORKSPACE_ROOT/frontend"
+
 echo "[startup] starting backend on $BACKEND_PORT"
 start_process backend "$BACKEND_PORT" \
   "cd '$WORKSPACE_ROOT/backend' && BACKEND_PORT='$BACKEND_PORT' PORT='$BACKEND_PORT' npm start"
