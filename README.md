@@ -15,5 +15,5 @@ Canonical full-stack workspace repository for Project TenderHeart.
 npm install
 npm --prefix frontend install
 npm --prefix backend install
-bash startup.sh
+bash scripts/startup.sh
 ```
