@@ -161,10 +161,10 @@ usage() {
 $APP_NAME
 
 Usage:
-  bash apply-patch.sh [patch-file.zip]
-  bash apply-patch.sh --list
-  bash apply-patch.sh --history
-  DELETE_ZIP_AFTER_APPLY=0 bash apply-patch.sh patch-file.zip
+  bash scripts/apply-patch.sh [patch-file.zip]
+  bash scripts/apply-patch.sh --list
+  bash scripts/apply-patch.sh --history
+  DELETE_ZIP_AFTER_APPLY=0 bash scripts/apply-patch.sh patch-file.zip
 
 A patch may include a root-level $DELETE_MANIFEST_NAME file with one project-relative path per line.
 EOF_HELP
